@@ -1,0 +1,851 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>智能家居-控制家居设备</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="https://show.17sucai.com/preview/3/2022-07-08/%E5%AE%B6%E5%B1%85%E5%95%86%E5%9F%8E/%E2%95%9D%E2%95%A5%E2%95%9B%E2%95%99%E2%95%94%E2%95%A0%E2%94%82%E2%95%9F/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="https://show.17sucai.com/preview/3/2022-07-08/%E5%AE%B6%E5%B1%85%E5%95%86%E5%9F%8E/%E2%95%9D%E2%95%A5%E2%95%9B%E2%95%99%E2%95%94%E2%95%A0%E2%94%82%E2%95%9F/assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="assets/css/lightslider.min.css">
+    <link rel="stylesheet" href="assets/css/price_rangs.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/globe.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
+</head>
+<body ng-app="myApp" ng-app="myApp" ng-controller="myCtrl" ng-init="selectAllBindDeviceByUserId()">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/picture/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row menu-wrapper align-items-center justify-content-between">
+                        <div class="header-left d-flex align-items-center">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/picture/logo.png" alt=""></a>
+                            </div>
+                            <!-- Logo-2 -->
+                            <div class="logo2">
+                                <a href="index.html"><img src="assets/picture/loder.png" alt=""></a>
+                            </div>
+                            <!-- Main-menu -->
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">首页</a></li> 
+                                        <li><a href="product.html">产品</a></li>
+                                        <li><a href="about.html">关于</a></li>
+                                        <li><a href="#">登录</a>
+                                            <ul class="submenu">
+                                                <li><a href="login.html">登录</a></li>
+                                                <li><a href="register.html">注册</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="blog.html">博客</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">博客</a></li>
+                                                <li><a href="blog_details.html">博客信息</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>   
+                        </div>
+                        <div class="header-right1 d-flex align-items-center">
+                            <div class="search">
+                                <ul class="d-flex align-items-center">
+                                    <li>
+                                        <a href="login.html" class="account-btn" target="_blank">我的账户</a>
+                                    </li>
+                                    <li>
+                                        <div class="card-stor">
+                                            <img src="assets/picture/card.svg" alt="">
+                                            <span>0</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider hero-overly2  slider-height2 d-flex align-items-center slider-bg2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-8 col-md-8">
+                                <div class="hero__caption hero__caption2">
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">所有家居信息</h1>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                                            <li class="breadcrumb-item"><a href="useralldevice.html">所有家居信息</a></li>
+                                            <li class="breadcrumb-item"><a href="#">已购买家居设备</a>
+                                                <div>
+                                                    <ul style="text-align: center;">
+                                                        <li ng-repeat="device in userdevices"><a href="#" ng-click="change($index)">{{device.macAddress}}</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!--================Cart Area =================-->
+        <section class="cart_area section-padding40">
+            <div class="container">
+                <div class="data-table-area mg-b-15">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12" style="color: aliceblue;">
+                            <h1>家居设备信息：</h1>
+                            <div class="form-group">
+                                <p class="col-md-2 control-label">家居设备号:</p>
+                                <input type="text" class="form-control" style="width:300px;" ng-model="devid">
+                            </div>
+                        
+                            <h1 style="padding-top: 20px;">实时房间监控：</h1>
+                            <div class="row" style="padding-top: 20px;color: #000;">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-green green">
+                                        <div class="panel-right">
+                                        <h1>温度</h1>
+                                        <input type="text" class="form-control" ng-model="tem">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-blue">
+                                        <div class="panel-right">
+                                        <h1>湿度</h1>
+                                        <input type="text" class="form-control" ng-model="hum">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="panel panel-primary text-center no-boder bg-color-red">
+                                        <div class="panel-right">
+                                        <h1>光照强度</h1>
+                                        <input type="text" class="form-control" ng-model="light">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        
+                            <h1 style="margin-top: 20px;">家居设备控制：</h1>
+                            <div class="panel-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <p>显示屏：</p>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" style="width:300px" ng-model="pingmu">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:310px;bottom:35px" ng-click="OnChange()">更换</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>通知：</p>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" style="width:300px" ng-model="content">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:310px;bottom:35px" ng-click="OnBroadcast()">播报</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>控制返回结果：{{res}}</p>
+                                        </div>
+                                        <div class="form-group" style="padding-top: 50px;">
+                                            <div class="col-md-10">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:260px;bottom:35px" ng-click="Btnled1On()">打开灯光</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:270px;bottom:35px" ng-click="Btnled1Off()">关闭灯光</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:280px;bottom:35px" ng-click="BtnAirOn()">打开空调</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:290px;bottom:35px" ng-click="BtnAirOff()">关闭空调</button><br>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:260px;bottom:35px" ng-click="BtnDoorOn()">打开房门</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:270px;bottom:35px" ng-click="BtnDoorOff()">关闭房门</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:280px;bottom:35px" ng-click="BtnWaterOn()">打开热水器</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:290px;bottom:35px" ng-click="BtnAlarmOn()">警报</button><br>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>音乐：</p>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" style="width:300px" ng-model="music">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:310px;bottom:35px" ng-click="PlayMusic()">立即播放</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:320px;bottom:35px" ng-click="PauseMusic()">暂停音乐</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:330px;bottom:35px" ng-click="ContinueMusic()">继续音乐</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light" style="position: relative;left:340px;bottom:35px" ng-click="StopMusic()">停止音乐</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>补光设备：</p>
+                                            <div class="col-md-10">
+                                                <button type="submit" class="btn btn-info waves-effect waves-light">打开</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light">关闭</button>
+                                                <button type="submit" class="btn btn-info waves-effect waves-light">闪烁</button>
+                                            </div>
+                                        </div><br>
+                                    </form>
+                                    <h1>房间温湿度数据：</h1>
+                                    <div id="main" style="height:400px;"></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Cart Area =================-->
+        <!--? Services Area Start -->
+        <div class="categories-area section-padding40 gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="cat-icon">
+                                <img src="assets/picture/services1.svg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>快速免费送货</h5>
+                                <p>所有订单免费送货</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="cat-icon">
+                                <img src="assets/picture/services2.svg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>安全支付</h5>
+                                <p>所有订单免费送货</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="cat-icon">
+                                <img src="assets/picture/services3.svg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>退款保证</h5>
+                                <p>所有订单免费送货</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="cat-icon">
+                                <img src="assets/picture/services4.svg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>在线支持</h5>
+                                <p>所有订单免费送货</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--? Services Area End -->
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+           <!-- Footer Start-->
+           <div class="footer-area footer-padding">
+               <div class="container ">
+                   <div class="row justify-content-between">
+                       <div class="col-xl-4 col-lg-3 col-md-8 col-sm-8">
+                           <div class="single-footer-caption mb-50">
+                               <div class="single-footer-caption mb-30">
+                                   <!-- logo -->
+                                   <div class="footer-logo mb-35">
+                                       <a href="index.html"><img src="assets/picture/loder.png" alt=""></a>
+                                   </div>
+                                   <div class="footer-tittle">
+                                       <div class="footer-pera">
+                                           <p>点亮您的家居世界，开启智能生活新篇章</p>
+                                       </div>
+                                   </div>
+                                   <!-- social -->
+                                   <div class="footer-social">
+                                       <a href="#"><i class="fab fa-twitter"></i></a>
+                                       <a href="javascript:;"><i class="fab fa-facebook-f"></i></a>
+                                       <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>快速链接</h4>
+                                   <ul>
+                                       <li><a href="#">图像许可证</a></li>
+                                       <li><a href="#">风格指南</a></li>
+                                       <li><a href="#">隐私政策</a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>家居类别</h4>
+                                   <ul>
+                                        <li><a href="#">图像许可证</a></li>
+                                        <li><a href="#">风格指南</a></li>
+                                        <li><a href="#">隐私政策</a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>合作伙伴</h4>
+                                   <ul>
+                                        <li><a href="#">图像许可证</a></li>
+                                        <li><a href="#">风格指南</a></li>
+                                        <li><a href="#">隐私政策</a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- footer-bottom area -->
+           <div class="footer-bottom-area">
+               <div class="container">
+                   <div class="footer-border">
+                       <div class="row d-flex align-items-center">
+                           <div class="col-xl-12 ">
+                               <div class="footer-copy-right text-center">
+                                   <p>
+                                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="javascript:;" target="_self">xy</a>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Footer End-->
+          </div>
+      </footer>
+      <!-- Scroll Up -->
+      <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="assets/js/modernizr-3.5.0.min.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Slick-slider , Owl-Carousel ,slick-nav -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin, Date Picker -->
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/animated.headline.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/gijgo.min.js"></script>
+
+    <!-- Nice-select, sticky,Progress -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/jquery.barfiller.js"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/jquery.form.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/mail-script.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http, $interval) {
+            var user;
+            var device;
+            $scope.selectAllBindDeviceByUserId = function() {
+                var devicestr = localStorage.getItem("controldevice");
+                device = JSON.parse(devicestr);
+                $scope.devid = device.macAddress;
+            }
+            $scope.Btnled1On = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 1,
+                    act: 1,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.Btnled1Off = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 1,
+                    act: 0,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnAirOn = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 4,
+                    act: 1,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnAirOff = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 4,
+                    act: 2,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnDoorOn = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 5,
+                    act: 1,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnDoorOff = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 5,
+                    act: 2,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnWaterOn = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 6,
+                    act: 1,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.BtnAlarmOn = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 7,
+                    act: 1,
+                    content: "",
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.OnChange = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 13,
+                    act: 1,
+                    content: $scope.pingmu,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.OnBroadcast = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 8,
+                    act: 1,
+                    content: $scope.content,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.PlayMusic = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 50,
+                    act: 1,
+                    content: $scope.music,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.PauseMusic = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 50,
+                    act: 2,
+                    content: $scope.music,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.ContinueMusic = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 50,
+                    act: 3,
+                    content: $scope.music,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.StopMusic = function() {
+                var actionObj = {
+                    actid: 1,
+                    devid: $scope.devid,
+                    devname: "rpi1",
+                    types: "lora",
+                    subdevid: "4271",
+                    unit: 50,
+                    act: 4,
+                    content: $scope.music,
+                    sendtime: "",
+                    username: "xy"
+                };
+                $http({
+                    method: 'POST',
+                    url: GlobalConfig.IPSSAddress + 'mqtt/sendmqttact',
+                    data: actionObj,
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    $scope.res = response.data.msg;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.realData = function() {
+                $http({
+                    method: 'GET',
+                    url: GlobalConfig.IPSSAddress + 'data/realData/' + $scope.devid
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    console.log(response.data);
+                    $scope.tem = response.data.data.temperature;
+                    $scope.hum = response.data.data.humidity;
+                    $scope.light = response.data.data.light;
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            var time = [];
+            var temperature = [];
+            $scope.hisData = function() {
+                $http({
+                    method: 'GET',
+                    url: GlobalConfig.IPSSAddress + 'data/historyData/' + $scope.devid
+                }).then(function successCallback(response) {
+                    // 请求成功执行代码
+                    console.log(response.data);
+                    time = [];
+                    temperature = [];
+                    $.each(response.data.data, function(i, item) {
+                        temperature[i] = item.temperature;
+                        time[i] = item.time;
+                    });
+                    console.log(time);
+                    $scope.chart(time, temperature);
+                }, function errorCallback(response) {
+                    // 请求失败执行代码
+                });
+            }
+            $scope.chart = function(time, temperature) {
+                var dom = document.getElementById("main");
+                var myChart = echarts.init(dom);
+                var app = {};
+                var option;
+                option = {
+                    xAxis: {
+                        type: 'category',
+                        data: time
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: temperature,
+                        type: 'bar',
+                        showBackground: true,
+                        backgroundStyle: {
+                            color: 'rgba(180, 180, 180, 0.2)'
+                        }
+                    }]
+                };
+
+                if (option && typeof option === 'object') {
+                    myChart.setOption(option);
+                }
+            }
+            var stopEvent = $interval(function() {
+                //每分钟执行一次定时任务
+                $scope.realData();
+                $scope.hisData();
+                $scope.$on("$destroy", function() {
+                    //离开controller时清除配置,不然scroll会重复请求
+                    if (angular.isDefined(stopEvent)) {
+                        $interval.cancel(stopEvent);
+                        stopEvent = undefined;
+                    };
+                })
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

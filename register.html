@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>智能家居-注册</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="https://show.17sucai.com/preview/3/2022-07-08/%E5%AE%B6%E5%B1%85%E5%95%86%E5%9F%8E/%E2%95%9D%E2%95%A5%E2%95%9B%E2%95%99%E2%95%94%E2%95%A0%E2%94%82%E2%95%9F/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="https://show.17sucai.com/preview/3/2022-07-08/%E5%AE%B6%E5%B1%85%E5%95%86%E5%9F%8E/%E2%95%9D%E2%95%A5%E2%95%9B%E2%95%99%E2%95%94%E2%95%A0%E2%94%82%E2%95%9F/assets/img/favicon.ico">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="assets/css/lightslider.min.css">
+    <link rel="stylesheet" href="assets/css/price_rangs.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/globe.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="registerCtrl">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/picture/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <!-- header end -->
+    <main class="login-bg">
+        <!-- Register Area Start -->
+        <div class="register-form-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="register-form text-center">
+                            <!-- Login Heading -->
+                            <div class="register-heading">
+                                <span>注 册</span>
+                                <p>请输入详细信息注册用户</p>
+                            </div>
+                            <!-- Single Input Fields -->
+                            <div class="input-box">
+                                <div class="single-input-fields">
+                                    <label>用户名</label>
+                                    <input type="text" ng-model="username" placeholder="请输入你的用户名">
+                                </div>
+                                <div class="single-input-fields">
+                                    <label>密码</label>
+                                    <input type="password" ng-model="password" placeholder="请输入你的密码">
+                                </div>
+                                <div class="single-input-fields">
+                                    <label>确认密码</label>
+                                    <input type="password" ng-model="password2" placeholder="请确认你的密码">
+                                </div>
+                            </div>
+                            <!-- form Footer -->
+                            <div class="register-footer">
+                                <p> 您已经拥有一个账号？ 点击这里<a href="login.html">登录</a>哦！</p>
+                                <button type="submit" class="submit-btn3" ng-click="register()">注册</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Register Area End -->
+    </main>
+
+    <!-- JS here -->
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="assets/js/modernizr-3.5.0.min.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Slick-slider , Owl-Carousel ,slick-nav -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin, Date Picker , price, light-slider -->
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/animated.headline.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/gijgo.min.js"></script>
+    <script src="assets/js/lightslider.min.js"></script>
+    <script src="assets/js/price_rangs.js"></script>
+    
+    <!-- Nice-select, sticky,Progress -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/jquery.barfiller.js"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/jquery.form.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/mail-script.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script type="text/javascript">
+        var app=angular.module("myApp",[]);	
+        app.controller("registerCtrl",function($scope,$http){
+            $scope.register = function(){
+                var Jsonuser={
+                    "username":$scope.username,
+                    "password":$scope.password 
+                }
+                $http({
+                     method: 'post',
+                     url: GlobalConfig.IPSSAddress + 'user/register?password2=' + $scope.password2,
+                     data:Jsonuser
+                 }).then(function successCallback(response) {
+                        console.log(response);
+                        if(response.data.code==0)
+                            window.location.href="login.html";
+                            alert("注册成功")
+                        if(response.data.code==-1)
+                            alert("注册失败");
+                        if(response.data.code==-2)
+                            alert("用户名已经存在");
+                        if(response.data.code==-3)
+                            alert("密码不一样");
+                           }, function errorCallback(response) {
+                         // 请求失败执行代码
+                         alert("请求失败");
+                 });
+              }
+         });
+     </script>
+    </body>
+</html>
